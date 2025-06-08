@@ -1,0 +1,26 @@
+<p>Designer</p>
+<p-splitter
+  [panelSizes]="[25, 50, 25]"
+  [style]="{ height: '300px' }"
+  styleClass="mb-8"
+>
+  <ng-template #panel>
+    <div class="flex items-center justify-center h-full">
+      <p>Widgets</p>
+
+      <div class="flex items-center justify-center h-full">
+        @for(widget of widgets; track widget.id) {
+        <div>
+          {{ widget.name }}
+        </div>
+        }
+      </div>
+    </div>
+  </ng-template>
+  <ng-template #panel>
+    <div class="flex items-center justify-center h-full">Preview</div>
+  </ng-template>
+  <ng-template #panel>
+    <div class="flex items-center justify-center h-full">Properties</div>
+  </ng-template>
+</p-splitter>
